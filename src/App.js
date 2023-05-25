@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import previewImage from './image/image.png';
 import previewImage2 from './image/404.png';
+import iconImage from './image/focoON.png';
 
 
 
@@ -31,15 +32,30 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const Button = styled.button`
-  padding: 10px 20px;
+  padding: 5px 15px;
   background: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.color};
   border: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   cursor: pointer;
-  margin-top: auto; /* Agregamos margen superior automático para centrar el botón */
+  margin-top: 20px;
+  margin-bottom: 40px; /* Agregamos margen superior automático para centrar el botón */
 `;
+
+const ButtonMOC = styled.button`
+  width: 50px; /* Ajusta el tamaño del icono según tus necesidades */
+  height: 50px;
+  background: url(${iconImage}) no-repeat center center;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  /* Resto de los estilos */
+`;
+
 
 const Container = styled.div`
   background: ${({ theme }) => theme.background};
@@ -155,13 +171,15 @@ const ProjectContainer = styled.div`
 
 
 const ProjectTitle = styled.h2`
-  font-size: 14px;
+  font-size: 22px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin-bottom: 10px;
 `;
 
 const ProjectDescription = styled.p`
   color: ${({ theme }) => theme.color};
-  font-size: 13.5px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 14px;
   //color: #888;
 `;
 
@@ -244,18 +262,18 @@ const Portfolio = () => {
               Si quieres saber mas sobre mi persona, te dejo un link que te llevara a mi perfil en la plataforma LinkedIn y Github.
             </BioText>
             </BioContainer>
-  <LinkButtonsContainer>
-    <LinkButton href="https://www.linkedin.com/in/roy-william-méndez-villalba/" target="_blank" rel="noopener noreferrer">
-      LinkedIn
-    </LinkButton>
-    <LinkButton href="https://github.com/cachitomevi" target="_blank" rel="noopener noreferrer">
-      GitHub
-    </LinkButton>
-  </LinkButtonsContainer>
+            <LinkButtonsContainer>
+              <LinkButton href="https://www.linkedin.com/in/roy-william-méndez-villalba/" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </LinkButton>
+              <LinkButton href="https://github.com/cachitomevi" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </LinkButton>
+            </LinkButtonsContainer>
         </ProfileContainer>
-        <Button onClick={toggleTheme}>
-          Cambiar a {theme === lightTheme ? 'Modo Oscuro' : 'Modo Claro'}
-        </Button>
+        <ButtonMOC src={iconImage} alt="Icono" onClick={toggleTheme}>
+          {theme === lightTheme ? 'ON' : 'OFF'}
+        </ButtonMOC>
         <PortfolioContainer>
         <Project
           title="Proyecto #1"
