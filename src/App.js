@@ -253,7 +253,7 @@ const Portfolio = () => {
           <ProfileImage src={profileImage} alt="Imagen de perfil" />
           <BioContainer>
             <BioText>
-              ¡Hola!Soy Roy Méndez, un apasionado y futuro ingeniero de sistemas con un poco de experiencia en desarrollo FrontEnd.
+              ¡Hola! Soy Roy Méndez, un apasionado y futuro ingeniero de sistemas con un poco de experiencia en desarrollo FrontEnd.
             </BioText> 
             <BioText> 
               Estoy entusiasmado por crear aplicaciones web increíbles y brindar soluciones creativas a los desafíos tecnológicos del dia a dia.
